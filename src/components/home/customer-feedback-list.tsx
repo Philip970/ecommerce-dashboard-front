@@ -9,17 +9,17 @@ type FeedbackItem = {
   avatarUrl?: string;
 };
 
-type DashboardCustomerFeedbackProps = {
+type DashboardCustomerFeedbackListProps = {
   title?: string;
   feedbacks: FeedbackItem[];
 };
 
 const { useToken } = theme;
 
-export const DashboardCustomerFeedback = ({
+export const DashboardCustomerFeedbackList = ({
   title = "Customer's Feedback",
   feedbacks,
-}: DashboardCustomerFeedbackProps) => {
+}: DashboardCustomerFeedbackListProps) => {
   const { token } = useToken();
   return (
     <div

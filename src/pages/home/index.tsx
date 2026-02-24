@@ -1,7 +1,7 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 
 import {
-  DashboardCustomerFeedback,
+  DashboardCustomerFeedbackList,
   DashboardNetProfit,
   DashboardNetProfitSkeleton,
   DashboardTotalCount,
@@ -40,7 +40,7 @@ const Home = () => {
         </div>
 
         <div className="mt-8">
-          <DashboardCustomerFeedback
+          <DashboardCustomerFeedbackList
             feedbacks={[
               {
                 name: "Ilysa Hurt",
