@@ -54,7 +54,7 @@ export const DashboardTotalCount = ({
       </div>
 
       <div className="flex items-end justify-between">
-        <AnimatedCounter from={0} to={count} />
+        <AnimatedCounter className="text-3xl font-bold" from={0} to={count} />
         <Text
           size="xs"
           className="font-bold"

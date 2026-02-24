@@ -13,12 +13,16 @@ import type { ComponentRef } from "react";
 type AnimatedCounterProps = {
   from: number;
   to: number;
+  suffix?: string;
+  className?: string;
   animationOptions?: KeyframeOptions;
 };
 
 export const AnimatedCounter = ({
   from,
   to,
+  suffix = "",
+  className,
   animationOptions,
 }: AnimatedCounterProps) => {
   const ref = useRef<ComponentRef<typeof Typography.Text>>(null);
@@ -31,11 +35,11 @@ export const AnimatedCounter = ({
     if (!inView) return;
 
     // Set initial value
-    element.textContent = String(from);
+    element.textContent = `${from}${suffix}`;
 
     // If reduced motion is enabled in system's preferences
     if (window.matchMedia("(prefers-reduced-motion)").matches) {
-      element.textContent = String(to);
+      element.textContent = `${to}${suffix}`;
       return;
     }
 
@@ -44,7 +48,7 @@ export const AnimatedCounter = ({
       ease: "easeOut",
       ...animationOptions,
       onUpdate(value) {
-        element.textContent = value.toFixed(0);
+        element.textContent = `${value.toFixed(0)}${suffix}`;
       },
     });
 
@@ -52,11 +56,11 @@ export const AnimatedCounter = ({
     return () => {
       controls.stop();
     };
-  }, [ref, inView, from, to]);
+  }, [ref, inView, from, to, suffix, animationOptions]);
 
   return (
-    <Typography.Text ref={ref} className="font-bold text-3xl">
-      0
+    <Typography.Text ref={ref} className={className}>
+      {`${from}${suffix}`}
     </Typography.Text>
   );
 };
