@@ -13,7 +13,9 @@ import type { ComponentRef } from "react";
 type AnimatedCounterProps = {
   from: number;
   to: number;
+  prefix?: string;
   suffix?: string;
+  decimals?: number;
   className?: string;
   animationOptions?: KeyframeOptions;
 };
@@ -21,7 +23,9 @@ type AnimatedCounterProps = {
 export const AnimatedCounter = ({
   from,
   to,
+  prefix = "",
   suffix = "",
+  decimals = 0,
   className,
   animationOptions,
 }: AnimatedCounterProps) => {
@@ -35,11 +39,11 @@ export const AnimatedCounter = ({
     if (!inView) return;
 
     // Set initial value
-    element.textContent = `${from}${suffix}`;
+    element.textContent = `${prefix}${from.toFixed(decimals)}${suffix}`;
 
     // If reduced motion is enabled in system's preferences
     if (window.matchMedia("(prefers-reduced-motion)").matches) {
-      element.textContent = `${to}${suffix}`;
+      element.textContent = `${prefix}${to.toFixed(decimals)}${suffix}`;
       return;
     }
 
@@ -48,7 +52,7 @@ export const AnimatedCounter = ({
       ease: "easeOut",
       ...animationOptions,
       onUpdate(value) {
-        element.textContent = `${value.toFixed(0)}${suffix}`;
+        element.textContent = `${prefix}${value.toFixed(decimals)}${suffix}`;
       },
     });
 
@@ -56,11 +60,11 @@ export const AnimatedCounter = ({
     return () => {
       controls.stop();
     };
-  }, [ref, inView, from, to, suffix, animationOptions]);
+  }, [ref, inView, from, to, prefix, suffix, decimals, animationOptions]);
 
   return (
     <Typography.Text ref={ref} className={className}>
-      {`${from}${suffix}`}
+      {`${prefix}${from.toFixed(decimals)}${suffix}`}
     </Typography.Text>
   );
 };

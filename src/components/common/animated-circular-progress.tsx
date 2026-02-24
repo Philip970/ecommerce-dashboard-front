@@ -17,6 +17,8 @@ type AnimatedCircularProgressProps = {
   strokeWidth?: number;
   color?: string;
   trailColor?: string;
+  valueClassName?: string;
+  labelClassName?: string;
   animationOptions?: KeyframeOptions;
 };
 
@@ -29,6 +31,8 @@ export const AnimatedCircularProgress = ({
   strokeWidth = 20,
   color = "#7398f9",
   trailColor = "#bcc9ff",
+  valueClassName = "text-4xl font-bold",
+  labelClassName = "text-2xl font-medium",
   animationOptions,
 }: AnimatedCircularProgressProps) => {
   const { token } = useToken();
@@ -91,11 +95,11 @@ export const AnimatedCircularProgress = ({
           from={0}
           to={clampedCount}
           suffix="%"
-          className="text-4xl font-bold"
+          className={valueClassName}
           animationOptions={animationOptions}
         />
         <Typography.Text
-          className="text-2xl font-medium"
+          className={labelClassName}
           style={{
             color: token.colorTextSecondary,
           }}

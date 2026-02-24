@@ -28,7 +28,7 @@ export const DashboardTotalCount = ({
 
   return (
     <div
-      className="flex  flex-col gap-2 rounded-md p-2"
+      className="flex  flex-col gap-2 rounded-md p-4"
       style={{ backgroundColor: token.colorBgContainer }}
     >
       <div>

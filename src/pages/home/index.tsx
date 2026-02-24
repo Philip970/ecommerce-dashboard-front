@@ -1,7 +1,7 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 
 import {
-  AnimatedCircularProgress,
+  DashboardNetProfit,
   DashboardTotalCount,
   DashboardTotalCountSkeleton,
   Text,
@@ -31,7 +31,7 @@ const Home = () => {
         <DashboardTotalCountSkeleton />
 
         <div className="mt-8">
-          <AnimatedCircularProgress count={70} label="Performance" />
+          <DashboardNetProfit amount={6759.25} progress={70} variation={3} />
         </div>
       </Content>
     </Layout>
