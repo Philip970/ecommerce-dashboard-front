@@ -1,8 +1,12 @@
 export { Header } from "./header";
 export { Text } from "./common/text";
+export { CustomerFeedback } from "./common/customer-feedback";
 export { DashboardTotalCount } from "./home/total-count";
 export { DashboardNetProfit } from "./home/net-profit";
+export { DashboardCustomerFeedbackList } from "./home/customer-feedback-list";
 export { AnimatedCounter } from "./common/animated-counter";
 export { AnimatedCircularProgress } from "./common/animated-circular-progress";
 export { DashboardTotalCountSkeleton } from "./skeleton/total-count";
 export { DashboardNetProfitSkeleton } from "./skeleton/net-profit";
+export { DashboardCustomerFeedbackSkeleton } from "./skeleton/customer-feedback";
+export { DashboardCustomerFeedbackListSkeleton } from "./skeleton/customer-feedback-list";
