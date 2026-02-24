@@ -2,6 +2,7 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 
 import {
   DashboardCustomerFeedbackList,
+  DashboardCustomerFeedbackListSkeleton,
   DashboardNetProfit,
   DashboardNetProfitSkeleton,
   DashboardTotalCount,
@@ -56,6 +57,9 @@ const Home = () => {
               },
             ]}
           />
+        </div>
+        <div className="mt-4">
+          <DashboardCustomerFeedbackListSkeleton count={2} />
         </div>
       </Content>
     </Layout>
