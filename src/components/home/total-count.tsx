@@ -28,7 +28,7 @@ export const DashboardTotalCount = ({
 
   return (
     <div
-      className="flex  flex-col gap-2 rounded-md p-2"
+      className="flex  flex-col gap-2 rounded-md p-4"
       style={{ backgroundColor: token.colorBgContainer }}
     >
       <div>
@@ -54,7 +54,7 @@ export const DashboardTotalCount = ({
       </div>
 
       <div className="flex items-end justify-between">
-        <AnimatedCounter from={0} to={count} />
+        <AnimatedCounter className="text-3xl font-bold" from={0} to={count} />
         <Text
           size="xs"
           className="font-bold"
