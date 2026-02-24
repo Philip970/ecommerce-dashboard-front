@@ -1,6 +1,10 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 
-import { DashboardTotalCount, Text } from "@/components";
+import {
+  DashboardTotalCount,
+  DashboardTotalCountSkeleton,
+  Text,
+} from "@/components";
 import { Layout } from "antd";
 
 const { Content } = Layout;
@@ -23,6 +27,7 @@ const Home = () => {
             variation={3}
           />
         </div>
+        <DashboardTotalCountSkeleton />
       </Content>
     </Layout>
   );
