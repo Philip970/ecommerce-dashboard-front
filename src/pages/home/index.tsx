@@ -1,6 +1,7 @@
 import { ShoppingCartOutlined } from "@ant-design/icons";
 
 import {
+  DashboardCustomerFeedback,
   DashboardNetProfit,
   DashboardNetProfitSkeleton,
   DashboardTotalCount,
@@ -36,6 +37,25 @@ const Home = () => {
         </div>
         <div className="mt-4">
           <DashboardNetProfitSkeleton />
+        </div>
+
+        <div className="mt-8">
+          <DashboardCustomerFeedback
+            feedbacks={[
+              {
+                name: "Ilysa Hurt",
+                rating: 5,
+                comment:
+                  "Breakfast with a perfect Eggs Benedict on focaccia and delightful coffee, earning a solid five stars.",
+              },
+              {
+                name: "Jeff Dickson",
+                rating: 4,
+                comment:
+                  "While the Gluten-Free Pizza was a departure from the standard offerings, there was effort in crafting a superior option.",
+              },
+            ]}
+          />
         </div>
       </Content>
     </Layout>

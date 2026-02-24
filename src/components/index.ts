@@ -1,7 +1,9 @@
 export { Header } from "./header";
 export { Text } from "./common/text";
+export { CustomerFeedback } from "./common/customer-feedback";
 export { DashboardTotalCount } from "./home/total-count";
 export { DashboardNetProfit } from "./home/net-profit";
+export { DashboardCustomerFeedback } from "./home/customer-feedback";
 export { AnimatedCounter } from "./common/animated-counter";
 export { AnimatedCircularProgress } from "./common/animated-circular-progress";
 export { DashboardTotalCountSkeleton } from "./skeleton/total-count";
