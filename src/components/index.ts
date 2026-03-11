@@ -12,3 +12,4 @@ export { DashboardTotalCountSkeleton } from "./skeleton/total-count";
 export { DashboardNetProfitSkeleton } from "./skeleton/net-profit";
 export { DashboardCustomerFeedbackSkeleton } from "./skeleton/customer-feedback";
 export { DashboardCustomerFeedbackListSkeleton } from "./skeleton/customer-feedback-list";
+export { DashboardActivityChartSkeleton } from "./skeleton/activity-chart";

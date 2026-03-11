@@ -2,6 +2,7 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 
 import {
   DashboardActivityChart,
+  DashboardActivityChartSkeleton,
   DashboardCustomerFeedbackList,
   DashboardCustomerFeedbackListSkeleton,
   DashboardNetProfit,
@@ -107,6 +108,9 @@ const Home = () => {
             title="Activity"
             periodLabel="Monthly"
           />
+        </div>
+        <div className="mt-4">
+          <DashboardActivityChartSkeleton barsCount={31} />
         </div>
       </Content>
     </Layout>
