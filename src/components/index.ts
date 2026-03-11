@@ -5,6 +5,7 @@ export { DashboardTotalCount } from "./home/total-count";
 export { DashboardNetProfit } from "./home/net-profit";
 export { DashboardCustomerFeedbackList } from "./home/customer-feedback-list";
 export { DashboardQuickLinks } from "./home/quick-links";
+export { DashboardActivityChart } from "./home/activity-chart";
 export { AnimatedCounter } from "./common/animated-counter";
 export { AnimatedCircularProgress } from "./common/animated-circular-progress";
 export { DashboardTotalCountSkeleton } from "./skeleton/total-count";
