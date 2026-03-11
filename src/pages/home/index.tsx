@@ -1,18 +1,20 @@
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import {
+  CheckCircleOutlined,
+  CloseCircleOutlined,
+  DollarCircleOutlined,
+  ShoppingCartOutlined,
+} from "@ant-design/icons";
 
 import {
   DashboardActivityChart,
-  DashboardActivityChartSkeleton,
   DashboardCustomerFeedbackList,
-  DashboardCustomerFeedbackListSkeleton,
   DashboardNetProfit,
-  DashboardNetProfitSkeleton,
   DashboardQuickLinks,
+  DashboardRecentOrders,
   DashboardTotalCount,
-  DashboardTotalCountSkeleton,
   Text,
 } from "@/components";
-import { Layout } from "antd";
+import { Layout, Row, Col } from "antd";
 
 const { Content } = Layout;
 
@@ -50,6 +52,72 @@ const monthlySalesData = [
   { label: "31-01-2026", value: 11550 },
 ];
 
+const orders = [
+  {
+    key: "1",
+    customer: "Wade Warren",
+    orderNo: "15478256",
+    amount: 124,
+    status: "Delivered",
+  },
+  {
+    key: "2",
+    customer: "Jane Cooper",
+    orderNo: "48935766",
+    amount: 365.02,
+    status: "Delivered",
+  },
+  {
+    key: "3",
+    customer: "Guy Hawkins",
+    orderNo: "78958215",
+    amount: 45.88,
+    status: "Cancelled",
+  },
+  {
+    key: "4",
+    customer: "Kristin Watson",
+    orderNo: "20965732",
+    amount: 65,
+    status: "Pending",
+  },
+  {
+    key: "5",
+    customer: "Cody Fisher",
+    orderNo: "95715620",
+    amount: 545,
+    status: "Delivered",
+  },
+  {
+    key: "6",
+    customer: "Savannah Nguyen",
+    orderNo: "78514568",
+    amount: 128.2,
+    status: "Delivered",
+  },
+  {
+    key: "7",
+    customer: "Brooklyn Simmons",
+    orderNo: "63489127",
+    amount: 249.99,
+    status: "Pending",
+  },
+  {
+    key: "8",
+    customer: "Leslie Alexander",
+    orderNo: "91827463",
+    amount: 89.5,
+    status: "Delivered",
+  },
+  {
+    key: "9",
+    customer: "Courtney Henry",
+    orderNo: "57264019",
+    amount: 312.75,
+    status: "Cancelled",
+  },
+];
+
 const Home = () => {
   return (
     <Layout>
@@ -58,60 +126,96 @@ const Home = () => {
           Dashboard
         </Text>
 
-        <div className="mt-5">
-          <DashboardTotalCount
-            title="Total Orders"
-            count={75}
-            icon={<ShoppingCartOutlined />}
-            iconColor="#4757E6"
-            iconBgColor="#bbcbff"
-            variation={3}
-          />
-        </div>
-        <DashboardTotalCountSkeleton />
+        <Row gutter={[16, 16]} className="mt-5">
+          <Col xs={24} lg={16}>
+            <Row gutter={[16, 16]}>
+              <Col xs={24} sm={12} xl={6}>
+                <DashboardTotalCount
+                  title="Total Orders"
+                  count={75}
+                  icon={<ShoppingCartOutlined />}
+                  iconColor="#5B8FF9"
+                  iconBgColor="rgba(91,143,249,0.2)"
+                  variation={3}
+                />
+              </Col>
+              <Col xs={24} sm={12} xl={6}>
+                <DashboardTotalCount
+                  title="Total Delivered"
+                  count={70}
+                  icon={<CheckCircleOutlined />}
+                  iconColor="#5AD8A6"
+                  iconBgColor="rgba(90,216,166,0.2)"
+                  variation={3}
+                />
+              </Col>
+              <Col xs={24} sm={12} xl={6}>
+                <DashboardTotalCount
+                  title="Total Cancelled"
+                  count={5}
+                  icon={<CloseCircleOutlined />}
+                  iconColor="#F4664A"
+                  iconBgColor="rgba(244,102,74,0.2)"
+                  variation={-3}
+                />
+              </Col>
+              <Col xs={24} sm={12} xl={6}>
+                <DashboardTotalCount
+                  title="Total Revenue"
+                  count={12000}
+                  icon={<DollarCircleOutlined />}
+                  iconColor="#F6BD16"
+                  iconBgColor="rgba(246,189,22,0.2)"
+                  variation={-3}
+                />
+              </Col>
+            </Row>
+          </Col>
 
-        <div className="mt-8">
-          <DashboardNetProfit amount={6759.25} progress={70} variation={3} />
-        </div>
-        <div className="mt-4">
-          <DashboardNetProfitSkeleton />
-        </div>
+          <Col xs={24} lg={8}>
+            <DashboardNetProfit amount={6759.25} progress={70} variation={3} />
+          </Col>
 
-        <div className="mt-8">
-          <DashboardCustomerFeedbackList
-            feedbacks={[
-              {
-                name: "Ilysa Hurt",
-                rating: 5,
-                comment:
-                  "Breakfast with a perfect Eggs Benedict on focaccia and delightful coffee, earning a solid five stars.",
-              },
-              {
-                name: "Jeff Dickson",
-                rating: 4,
-                comment:
-                  "While the Gluten-Free Pizza was a departure from the standard offerings, there was effort in crafting a superior option.",
-              },
-            ]}
-          />
-        </div>
-        <div className="mt-4">
-          <DashboardCustomerFeedbackListSkeleton count={2} />
-        </div>
-        <div className="mt-4">
-          <DashboardQuickLinks />
-        </div>
+          <Col xs={24} lg={16}>
+            <DashboardActivityChart
+              data={monthlySalesData}
+              title="Activity"
+              periodLabel="Monthly"
+            />
+          </Col>
 
-        <div className="mt-4">
-          <DashboardActivityChart
-            data={monthlySalesData}
-            title="Activity"
-            periodLabel="Monthly"
-          />
-        </div>
-        <div className="mt-4">
-          <DashboardActivityChartSkeleton barsCount={31} />
-        </div>
+          <Col xs={24} lg={8}>
+            <DashboardQuickLinks />
+          </Col>
+
+          <Col xs={24} lg={16}>
+            <DashboardRecentOrders title="Recent Orders" data={orders} />
+          </Col>
+
+          <Col xs={24} lg={8}>
+            <DashboardCustomerFeedbackList
+              feedbacks={[
+                {
+                  name: "Jenny Wilson",
+                  rating: 5,
+                  comment:
+                    "The food was excellent and service was very attentive.",
+                },
+                {
+                  name: "Dianne Russell",
+                  rating: 4,
+                  comment: "Great variety and fresh ingredients every time.",
+                },
+                {
+                  name: "Devon Lane",
+                  rating: 4,
+                  comment:
+                    "Normally wings are juicy and flavorful, very consistent.",
+                },
+              ]}
+            />
+          </Col>
+        </Row>
       </Content>
     </Layout>
   );

@@ -32,12 +32,14 @@ export const DashboardCustomerFeedbackList = ({
         {title}
       </Text>
 
-      <div className="mt-2 max-h-[340px] overflow-y-auto pr-2">
+      <div className="mt-4 max-h-[340px] overflow-y-auto pr-2">
         {feedbacks.map((feedback, index) => (
           <div
             key={`${feedback.name}-${index}`}
             className={
-              index < feedbacks.length - 1 ? "border-b border-gray-200" : ""
+              index < feedbacks.length - 1
+                ? "border-b border-gray-200 mb-4"
+                : "mb-4"
             }
           >
             <CustomerFeedback

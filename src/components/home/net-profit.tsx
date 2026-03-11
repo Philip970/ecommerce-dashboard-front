@@ -22,7 +22,7 @@ export const DashboardNetProfit = ({
 
   return (
     <div
-      className="flex w-full items-stretch justify-between rounded-md p-4"
+      className="flex w-full h-[130px] items-stretch justify-between rounded-md p-4"
       style={{ backgroundColor: token.colorBgContainer }}
     >
       <div className="flex flex-col justify-between gap-2">
@@ -41,7 +41,7 @@ export const DashboardNetProfit = ({
           to={amount}
           prefix="$ "
           decimals={2}
-          className="text-5xl font-bold"
+          className="text-4xl font-bold"
         />
 
         <Text
@@ -53,14 +53,14 @@ export const DashboardNetProfit = ({
         </Text>
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center justify-between">
         <AnimatedCircularProgress
           count={progress}
           label="Completed"
-          size={100}
+          size={75}
           strokeWidth={10}
-          valueClassName="text-2xl font-bold"
-          labelClassName="text-[10px] font-medium"
+          valueClassName="text-xl font-bold"
+          labelClassName="text-[8px] font-medium"
         />
         <Text size="xs" style={{ color: token.colorTextSecondary }}>
           You are close from your goal.

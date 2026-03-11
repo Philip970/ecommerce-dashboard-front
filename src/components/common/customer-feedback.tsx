@@ -22,7 +22,7 @@ export const CustomerFeedback = ({
   const safeRating = Math.max(0, Math.min(5, Math.round(rating)));
 
   return (
-    <div className="flex flex-col gap-3 py-4">
+    <div className="flex flex-col gap-3 pb-4">
       <div className="flex items-center gap-3">
         <Avatar
           src={avatarUrl}

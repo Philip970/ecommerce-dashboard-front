@@ -11,19 +11,19 @@ const links = [
   {
     key: "goals",
     label: "Goals",
-    icon: <AimOutlined className="text-[#F67A7A]" />,
+    icon: <AimOutlined size={32} className="text-[#F67A7A]" />,
     iconBgClass: "bg-[rgba(247,120,120,0.2)]",
   },
   {
     key: "popular-dishes",
     label: "Popular Dishes",
-    icon: <CoffeeOutlined className="text-[#5A79FF]" />,
+    icon: <CoffeeOutlined size={32} className="text-[#5A79FF]" />,
     iconBgClass: "bg-[rgba(90,121,255,0.2)]",
   },
   {
     key: "menus",
     label: "Menus",
-    icon: <AppstoreOutlined className="text-[#46D4E4]" />,
+    icon: <AppstoreOutlined size={32} className="text-[#46D4E4]" />,
     iconBgClass: "bg-[rgba(70,212,228,0.2)]",
   },
 ];
@@ -34,7 +34,7 @@ export const DashboardQuickLinks = () => {
   const { token } = useToken();
   return (
     <div
-      className="w-full rounded-md p-4"
+      className="w-full rounded-md p-5 h-[250px] flex flex-col justify-between"
       style={{
         backgroundColor: token.colorBgContainer,
       }}
@@ -42,10 +42,10 @@ export const DashboardQuickLinks = () => {
       {links.map((item) => (
         <div
           key={item.key}
-          className="mb-1.5 flex items-center rounded-full px-2 py-2.5 last:mb-0"
+          className="flex items-center rounded-full  last:mb-0"
         >
           <div
-            className={`mr-3 flex h-9 w-9 items-center justify-center rounded-full ${item.iconBgClass}`}
+            className={`mr-3 flex h-14 w-14 items-center justify-center rounded-full ${item.iconBgClass}`}
           >
             {item.icon}
           </div>
