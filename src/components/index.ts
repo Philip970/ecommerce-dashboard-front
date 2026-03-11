@@ -4,6 +4,7 @@ export { CustomerFeedback } from "./common/customer-feedback";
 export { DashboardTotalCount } from "./home/total-count";
 export { DashboardNetProfit } from "./home/net-profit";
 export { DashboardCustomerFeedbackList } from "./home/customer-feedback-list";
+export { DashboardQuickLinks } from "./home/quick-links";
 export { AnimatedCounter } from "./common/animated-counter";
 export { AnimatedCircularProgress } from "./common/animated-circular-progress";
 export { DashboardTotalCountSkeleton } from "./skeleton/total-count";
