@@ -5,6 +5,7 @@ import {
   DashboardCustomerFeedbackListSkeleton,
   DashboardNetProfit,
   DashboardNetProfitSkeleton,
+  DashboardQuickLinks,
   DashboardTotalCount,
   DashboardTotalCountSkeleton,
   Text,
@@ -60,6 +61,9 @@ const Home = () => {
         </div>
         <div className="mt-4">
           <DashboardCustomerFeedbackListSkeleton count={2} />
+        </div>
+        <div className="mt-4">
+          <DashboardQuickLinks />
         </div>
       </Content>
     </Layout>
