@@ -30,7 +30,7 @@ export const DashboardActivityChart = ({
   data,
   title = "Activity",
   periodLabel = "Weekly",
-  height = 300,
+  height = 175,
   yAxisMax,
 }: DashboardActivityChartProps) => {
   const { token } = useToken();
@@ -111,7 +111,7 @@ export const DashboardActivityChart = ({
 
   return (
     <div
-      className="w-full rounded-md p-4"
+      className="w-full rounded-md p-4 "
       style={{ backgroundColor: token.colorBgContainer }}
     >
       <div className="mb-3 flex items-center justify-between">
